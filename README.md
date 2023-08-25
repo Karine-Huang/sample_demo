@@ -19,25 +19,7 @@
     </tr>
 </table>
 
-### prompt: a bathroom with white tile and a beige toilet
-<table>
-    <tr>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.002.png" >BLIP-VQA score:0.002</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0126.png" >BLIP-VQA score:0.0126</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0201.png" >BLIP-VQA score:0.0201</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0418.png" >BLIP-VQA score:0.0418</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0432.png" >BLIP-VQA score:0.0432</center></td>
-    </tr>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0595.png" >BLIP-VQA score:0.0595</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.09.png" >BLIP-VQA score:0.09</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1001.png" >BLIP-VQA score:0.1001</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1088.png" >BLIP-VQA score:0.1088</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.2324.png" >BLIP-VQA score:0.2324</center></td>
 
-    <tr>
-
-    </tr>
-</table>
 
 ### prompt: a black squirrel and a brown nut
 <table>
@@ -59,40 +41,60 @@
     </tr>
 </table>
 
-### prompt: xxxxx
+### prompt: a blue backpack and a red book
 <table>
     <tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.0013.png" >BLIP-VQA score:0.0013</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.0256.png" >BLIP-VQA score:0.0256</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.0362.png" >BLIP-VQA score:0.0362</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.4833.png" >BLIP-VQA score:0.4833</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.6179.png" >BLIP-VQA score:0.6179</center></td>
     </tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.6437.png" >BLIP-VQA score:0.6437</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.6504.png" >BLIP-VQA score:0.6504</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.6532.png" >BLIP-VQA score:0.6532</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.9678.png" >BLIP-VQA score:0.9678</center></td>
+        <td><center><img src="./images/color/a blue backpack and a red book_0.9858.png" >BLIP-VQA score:0.9858</center></td>
 
     <tr>
 
     </tr>
 </table>
 
-### prompt: xxxxx
+### prompt: a bathroom with white tile and a beige toilet
 <table>
     <tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.002.png" >BLIP-VQA score:0.002</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0126.png" >BLIP-VQA score:0.0126</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0201.png" >BLIP-VQA score:0.0201</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0418.png" >BLIP-VQA score:0.0418</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0432.png" >BLIP-VQA score:0.0432</center></td>
     </tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0595.png" >BLIP-VQA score:0.0595</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.09.png" >BLIP-VQA score:0.09</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1001.png" >BLIP-VQA score:0.1001</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1088.png" >BLIP-VQA score:0.1088</center></td>
+        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.2324.png" >BLIP-VQA score:0.2324</center></td>
+
+    <tr>
+
+    </tr>
+</table>
+
+### prompt: a brown boat and a blue cat
+<table>
+    <tr>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.0011.png" >BLIP-VQA score:0.0011</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.1314.png" >BLIP-VQA score:0.1314</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.4872.png" >BLIP-VQA score:0.4872</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.6168.png" >BLIP-VQA score:0.6168</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.6705.png" >BLIP-VQA score:0.6705</center></td>
+    </tr>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.8512.png" >BLIP-VQA score:0.8512</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.8719.png" >BLIP-VQA score:0.8719</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.9156.png" >BLIP-VQA score:0.9156</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.9613.png" >BLIP-VQA score:0.9613</center></td>
+        <td><center><img src="./images/color/a brown boat and a blue cat_0.9618.png" >BLIP-VQA score:0.9618</center></td>
 
     <tr>
 
