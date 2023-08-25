@@ -320,14 +320,19 @@
 </table>
 
 ## shape
-### prompt: xxxxx
+<table>
     <tr>
         <td ><center><img src="./images/shape_failure/a big pig and a small mouse_0.231.png" >a big pig and a small mouse, BLIP-VQA score:0.231 </center></td>
         <td ><center><img src="./images/shape_failure/a cubic block and a cylindrical bottle of water_0.2166.png"  >a cubic block and a cylindrical bottle of water, BLIP-VQA score: 0.2166</center></td>
         <td><center><img src="./images/shape_failure/a cubic block and a cylindrical bottle of water_0.2574.png" >a cubic block and a cylindrical bottle of water, BLIP-VQA score: 0.2574</center></td>
     </tr>
+        <td ><center><img src="./images/shape_failure/a pentagonal stop sign and a pyramidal sculpture_0.637.png" >a pentagonal stop sign and a pyramidal sculpture, BLIP-VQA score:0.637 </center></td>
+        <td ><center><img src="./images/shape_failure/a triangular slice of bread and a rectangular bread basket_0.7206.png"  >a triangular slice of bread and a rectangular bread basket, BLIP-VQA score: 0.7206</center></td>
+        <td><center><img src="./images/shape_failure/an oblong carrot and a teardrop plum_0.0092.png" >an oblong carrot and a teardrop plum, BLIP-VQA score: 0.0092</center></td>
 
+    <tr>
 
+</table>
 ## texture
 ### prompt: xxxxx
 <table>
