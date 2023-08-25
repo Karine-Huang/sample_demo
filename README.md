@@ -1,1 +1,8 @@
-# sample_demo.github.io
+# color
+
+
+
+# shape
+
+
+# texture
