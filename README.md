@@ -320,6 +320,7 @@
 </table>
 
 ## shape
+
 <table>
     <tr>
         <td ><center><img src="./images/shape_failure/a big pig and a small mouse_0.231.png" >a big pig and a small mouse, BLIP-VQA score:0.231 </center></td>
