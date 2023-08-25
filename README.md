@@ -334,20 +334,13 @@
 
 </table>
 ## texture
-### prompt: xxxxx
 <table>
     <tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td ><center><img src="./images/texture_failure/a leather chair and a glass cup_0.8768.png.png" >a leather chair and a glass cup, BLIP-VQA score:0.8768 </center></td>
+        <td ><center><img src="./images/texture_failure/a metallic desk lamp and a fluffy blanket_0.8075.png"  >a metallic desk lamp and a fluffy blanket, BLIP-VQA score: 0.8075</center></td>
+        <td><center><img src="./images/texture_failure/a plastic chair and leather gloves_0.8516.png" >a plastic chair and leather gloves, BLIP-VQA score: 0.8516</center></td>
     </tr>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
-        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
-        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+
 
     <tr>
 
