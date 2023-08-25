@@ -311,7 +311,7 @@
 # Failure cases
 
 ## color
-<table border="1" style="width:200px;">
+<table>
     <tr>
         <td ><center><img src="./images/color_failure/a black squirrel and a brown nut_0.711.png" >a black squirrel and a brown nut, BLIP-VQA score:0.711 </center></td>
         <td ><center><img src="./images/color_failure/a brown boat and a blue cat_0.8719.png"  >a brown boat and a blue cat, BLIP-VQA score: 0.8719</center></td>
