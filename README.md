@@ -1,5 +1,85 @@
 # samples demo
-# color
+## color
+### prompt: xxxxx
+<table>
+    <tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+    </tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+
+    <tr>
+
+    </tr>
+</table>
+
+### prompt: xxxxx
+<table>
+    <tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+    </tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+
+    <tr>
+
+    </tr>
+</table>
+
+### prompt: xxxxx
+<table>
+    <tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+    </tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+
+    <tr>
+
+    </tr>
+</table>
+
+### prompt: xxxxx
+<table>
+    <tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td ><center><img src="./images/微信图片_20230823145244.png" >图1  范冰冰 </center></td>
+    </tr>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图2 范冰冰</center></td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+        <td><center><img src="./images/微信图片_20230823145244.png" >图3 高圆圆</center></td>
+        <td ><center><img src="./images/微信图片_20230823145244.png"  >图4 高圆圆</center> </td>
+
+    <tr>
+
+    </tr>
+</table>
+
 ### prompt: xxxxx
 <table>
     <tr>
@@ -21,7 +101,7 @@
 </table>
 
 
-# shape
+## shape
 
 
-# texture
+## texture
