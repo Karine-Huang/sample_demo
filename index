@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html class=" w-mod-ix"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNGS4SZ3C7"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WNGS4SZ3C7');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Multi-Concept Customization of Text-to-Image Diffusion</title>
+    <link rel="stylesheet" href="images/bootstrap.min.css">
+    <link href="images/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="images/Highlight-Clean.css">
+    <link rel="stylesheet" href="images/styles.css">
+
+    <link rel="manifest" href=images/site.webmanifest">
+
+    <meta property="og:site_name" content="CustomDiffusion">
+    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="Multi-concept Customization of Text-to-Image Diffusion">
+    <meta property="og:description" content="Multi-concept Customization of Text-to-Image Diffusion, 2022.">
+    <meta property="og:url" content="www.cs.cmu.edu/~custom-diffusion/">
+
+    <meta name="description" content="CustomDiffusion.">
+    <meta property="og:url" content="https://www.cs.cmu.edu/~custom-diffusion/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Multi-concept Customization of Text-to-Image Diffusion">
+    <meta property="og:description" content="Multi-concept Customization of Text-to-Image Diffusion, 2023.">
+    <meta property="og:image" content="https://www.cs.cmu.edu/~custom-diffusion/images/mainpage/thumbnail.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="cs.cmu.edu">
+    <meta property="twitter:url" content="https://www.cs.cmu.edu/~custom-diffusion/">
+    <meta name="twitter:title" content="Multi-concept Customization of Text-to-Image Diffusion">
+    <meta name="twitter:description" content="Multi-concept Customization of Text-to-Image Diffusion, 2023.">
+    <meta name="twitter:image" content="https://www.cs.cmu.edu/~custom-diffusion/images/mainpage/thumbnail.jpg">
+
+
+    <script src="images/video_comparison.js"></script>
+    <script type="module" src="images/model-viewer.min.js"></script>
+
+  
+</head>
+
+<body>
+
+    
+    <!-- <div class="banner">
+      <video class="video lazy" poster="https://pub-b1f092b6867f4495b8f149d222a3bffe.r2.dev/sept28/banner_1x6_customhue_A.jpg" autoplay="autoplay" loop="" playsinline="" muted="muted">
+        <source data-src="https://pub-b1f092b6867f4495b8f149d222a3bffe.r2.dev/sept28/banner_1x6_customhue_A.mp4" type="video/mp4" src="images/banner_1x6_customhue_A.mp4">
+      </video>
+    </div> -->
+    <div class="highlight-clean" style="padding-bottom: 20px;">
+        <div class="container" style="padding-bottom: 10px; max-width: 1000px;">
+            <h1 class="text-center">Multi-Concept Customization of Text-to-Image Diffusion</h1>
+        </div>
+        <div class="container" style="max-width: 900px;">
+            <div class="row authors" style="padding-bottom: 40px;">
+                <div class="col-sm">
+                    <h5 class="text-center"><a class="text-center" href="https://nupurkmr9.github.io">Nupur Kumari</a><sup>1</sup></h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="text-center"><a class="text-center" href="https://zhangbingliang2019.github.io">Bingliang Zhang</a><sup>2</sup></h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="text-center"><a href="https://richzhang.github.io">Richard Zhang</a><sup>3</sup></h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="text-center"><a class="text-center" href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a><sup>3</sup></h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="text-center"><a class="text-center" href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a><sup>1</sup></h5>
+                </div>
+            </div>    
+            <div class="row authors institute">
+                <div class="col-sm-12">
+                    <h3 class="text-center"><sup>1</sup> CMU &nbsp&nbsp <sup>2</sup>Tsinghua University &nbsp&nbsp <sup>3</sup>Adobe Research</h3>
+                </div>
+            </div>   
+            <div class="row authors institute">
+                <div class="col-sm-12">
+                    <h3 class="text-center"> CVPR 2023 </h3>
+                </div>
+            </div>     
+        </div>
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-light" role="button" href="https://github.com/adobe-research/custom-diffusion">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                </svg>
+                Code
+            </a>
+            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2212.04488">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper
+            </a>
+            <a class="btn btn-light disabled border border-dark" aria-disabled="true" role="button" href="#">
+                <svg style="visibility:hidden;width:0px;height:24px;margin-left:-12px;margin-right:12px" width="0px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Project
+            </a>
+            <a class="btn btn-light" role="button" href="results.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Gallery
+            </a>
+            <a class="btn btn-light" role="button" href="https://www.cs.cmu.edu/~custom-diffusion/assets/custom_diffusion.pptx">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 44 44"><path fill="currentColor" d="M10,26h8a2,2,0,0,0,2-2V14a2,2,0,0,0-2-2H10a2,2,0,0,0-2,2V24A2,2,0,0,0,10,26Zm0-12h8V24H10Zm15,4H35a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Zm0-4h6a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Zm0,8h4a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2ZM42,2H24a2,2,0,0,0-4,0H2A2,2,0,0,0,0,4V6A2,2,0,0,0,2,8V32a2,2,0,0,0,2,2H21v2.59l-5.71,5.71a1,1,0,1,0,1.41,1.41L22,38.41l5.29,5.29a1,1,0,1,0,1.41-1.41L23,36.59V34H40a2,2,0,0,0,2-2V8a2,2,0,0,0,2-2V4A2,2,0,0,0,42,2ZM40,32H4V8H40ZM42,6H2V4H42ZM25,26H35a1,1,0,0,0,0-2H25a1,1,0,0,0,0,2Z"/></path>
+                </svg>
+                Slides
+            </a>
+            <a class="btn btn-light" role="button" href="dataset.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v48H54a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6v-10h48zm42-336H150a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6V86a6 6 0 0 0-6-6zm6-48c26.51 0 48 21.49 48 48v256c0 26.51-21.49 48-48 48H144c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h384zM264 144c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40zm-72 96l39.515-39.515c4.686-4.686 12.284-4.686 16.971 0L288 240l103.515-103.515c4.686-4.686 12.284-4.686 16.971 0L480 208v80H192v-48z"></path>
+                </svg>
+
+                Data
+            </a>
+            <!-- <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/nupurkmr9/custom-diffusion">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 375 531">
+                    <img src="images/huggingface_logo-noborder.svg" style="width:24px;height:24px;margin-left:-12px;margin-right:12px"/>
+                </svg>
+                Demo
+            </a> -->
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1300px;">
+        <div class="row teaser">
+            <div class="col-md-12">
+                <!-- Large format devices -->
+                <img src="images/teaser.jpg" style="width: 100%;"/>
+                <p></p><p></p>
+                <h6 class="caption"></h6>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <hr class="divider"> -->
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Custom Diffusion</h2>
+                <p>
+                    While generative models produce high-quality images of concepts learned from a large-scale database, a user often wishes to synthesize instantiations of their own concepts (for example, their family, pets, or items).
+                    Can we teach a model to quickly acquire a new concept, given a few examples? 
+                    Furthermore, can we compose multiple new concepts together? 
+                </p>
+                <p>
+                    We propose Custom Diffusion, an efficient method for augmenting existing text-to-image models. 
+                    We find that only optimizing a few parameters in the text-to-image conditioning mechanism is sufficiently powerful to represent new concepts while enabling fast tuning. 
+                    Additionally, we can jointly train for multiple concepts or combine multiple fine-tuned models into one via closed-form constrained optimization. Our fine-tuned model generates variations of multiple new concepts in novel unseen settings. 
+                </p>
+                <p>
+                    Our method is fast <strong>(~6 minutes on 2 A100 GPUs)</strong> and has low storage requirements <b>(75MB)</b> for each additional concept model apart from the pretrained model.
+                    This can be further compressed to 5 - 15 MB by only saving a low-rank approximation of the weight updates. 
+                </p>
+
+                                
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>CustomConcept101 dataset</h2>
+                <p>
+                    We also introduced a new dataset of 101 concepts for evaluating model customization methods along with text prompts for single-concept and multi-concept compositions. For more details and results please refer to the <a href="dataset.html">dataset webpage</a> and <a href="https://github.com/adobe-research/custom-diffusion/tree/main/customconcept101">code</a>. 
+                </p>
+                <p></p><p></p>
+                <img src="images/customconcept101.jpg" style="width: 100%;"/>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- <hr class="divider"> -->
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Pipeline</h2>
+                <p>
+                    Given a set of target images, our method first retrieves (generates) regularization images with similar captions as target images. 
+                    The final training dataset is union of target and regularization images. During fine-tuning we update the key and value projection
+                    matrices of the cross-attention blocks in the diffusion model with the standard diffusion training loss. 
+                    All our experiments are based on <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original" target="_blank">Stable Diffusion</a>. 
+                </p>
+                <p></p><p></p>
+                <img src="images/methodology.jpg" style="width: 100%;"/>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+  
+    <!-- <hr class="divider"> -->
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Single-Concept Results </h2>
+                <p> 
+                    We show results of our fine-tuning method on various category of new/personalized concept including <span style="font-weight:900">scene, style, pet, personal toy, and objects</span>. 
+                    For more generations and comparison with concurrent methods please refer to our <a href="results.html">Gallery</a> page.
+                </p>
+                <p></p><p></p>
+                <div id="singleconceptscroll" class="containershadow" style="overflow-y:scroll; max-width: 1400px; max-height: 1024px;">
+
+
+                    <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/moongate_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/moongate_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate-in-snowy-ice_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate-in-snowy-ice_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/moongate-in-snowy-ice_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate-at-a-beach-with-a-view-of-seashore_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate-at-a-beach-with-a-view-of-seashore_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/moongate-at-a-beach-with-a-view-of-seashore_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Moongate in snowy ice
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Moongate at a beach with a view of seashore
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/graphics_art_0.png" style="width: 100%;"/>
+                           <img src="images/mainpage/graphics_art_1.png" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/graphics_art_2.png" style="width: 100%;"/>
+                           <img src="images/mainpage/graphics_art_3.png" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-dog_0.png" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-dog_1.png" style="width: 100%;"/>
+                           <img src="images/mainpage/painting-dog_2.png" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-plant_0.png" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-plant_1.png" style="width: 100%;"/>
+                           <img src="images/mainpage/painting-plant_2.png" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images (Credit: <a href="https://www.mia-tang.com/blog">Mia Tang</a>)
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                            Painting of dog in the style of V* art
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                            Plant painting in the style of V* art
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/tortoise_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/tortoise_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise-plushy-sitting-at-the-beach-with-a-view-of-sea_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise-plushy-sitting-at-the-beach-with-a-view-of-sea_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/tortoise-plushy-sitting-at-the-beach-with-a-view-of-sea_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise-plushy-wearing-sunglasses_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/tortoise-plushy-wearing-sunglasses_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/tortoise-plushy-wearing-sunglasses_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* tortoise plushy sitting at the beach with a view of sea
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* tortoise plushy wearing sunglasses
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_1.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/painting_2.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_3.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/painting_4.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_dog_style2_0.png" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_dog_style2_1.png" style="width: 100%;"/>
+                           <img src="images/mainpage/painting_dog_style2_2.png" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_plant_style2_0.png" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting_plant_style2_1.png" style="width: 100%;"/>
+                           <img src="images/mainpage/painting_plant_style2_2.png" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images (Credit: <a href="https://www.instagram.com/aaronhertzmann">Aaron Hertzmann</a>)
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                            Painting of dog in the style of V* art
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                            Plant painting in the style of V* art
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+
+
+                    <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/dog_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/dog_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog-wearing-sunglasses_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog-wearing-sunglasses_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/dog-wearing-sunglasses_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-sleeping-dog_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-sleeping-dog_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/a-sleeping-dog_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* dog wearing sunglasses
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           A sleeping V* dog
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/cat_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/cat_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat-in-times-square_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat-in-times-square_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/cat-in-times-square_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Painting-of-cat-at-a-beach-by-artist-claude-monet_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Painting-of-cat-at-a-beach-by-artist-claude-monet_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/Painting-of-cat-at-a-beach-by-artist-claude-monet_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* cat in times square
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Painting of V* cat at a beach by artist claude monet
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/table_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/table_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table-and-an-orange-sofa_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table-and-an-orange-sofa_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/table-and-an-orange-sofa_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table-with-a-vase-of-rose-flowers-on-it_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table-with-a-vase-of-rose-flowers-on-it_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/table-with-a-vase-of-rose-flowers-on-it_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* table and an orange sofa
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* table with a vase of rose flowers on it
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair-near-a-pool_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair-near-a-pool_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair-near-a-pool_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-watercolor-painting-of-chair-in-a-forest_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-watercolor-painting-of-chair-in-a-forest_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/a-watercolor-painting-of-chair-in-a-forest_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* chair near a pool
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           A watercolor painting of V* chair in a forest
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                      
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/barn_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/barn_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/barn_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/barn_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/barn-in-fall-season-with-leaves-all-around_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/barn-in-fall-season-with-leaves-all-around_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/barn-in-fall-season-with-leaves-all-around_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-of-barn-in-the-style-of-van-gogh_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/painting-of-barn-in-the-style-of-van-gogh_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/painting-of-barn-in-the-style-of-van-gogh_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* barn in fall season with leaves all around
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Painting of V* barn in the style of van gogh
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-vase-filled-with-flower-on-a-table_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/a-vase-filled-with-flower-on-a-table_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/a-vase-filled-with-flower-on-a-table_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-with-violet-color-petals_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-with-violet-color-petals_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower-with-violet-color-petals_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           A vase filled with V* flower on a table
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* flower with violet color petals
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/teddybear_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/teddybear_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear-in-grand-canyon_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear-in-grand-canyon_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/teddybear-in-grand-canyon_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear-swimming-in-pool_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/teddybear-swimming-in-pool_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/teddybear-swimming-in-pool_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* teddybear in grand canyon
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* teddybear swimming in pool
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/wooden_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/wooden_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden-pot-with-mountains-and-sunset-in-background_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden-pot-with-mountains-and-sunset-in-background_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/wooden-pot-with-mountains-and-sunset-in-background_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Rose-flowers-in-wooden-pot-on-a-table_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Rose-flowers-in-wooden-pot-on-a-table_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/Rose-flowers-in-wooden-pot-on-a-table_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V* wooden pot with mountains and sunset in background
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Rose flowers in V* wooden pot on a table
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       
+                       
+
+
+                    
+        
+
+        
+                </div>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Multi-Concept Results </h2>
+                <p> 
+                    In multi-concept fine-tuning we show composition of scene or object with a pet, and composition of two objects. 
+                    For more generations and comparison with concurrent methods please refer to our <a href="results.html">Gallery</a> page.
+                </p>
+                <p></p><p></p>
+                <div id="multiconceptscroll" class="containershadow" style="overflow-y:scroll; max-width: 1400px; max-height: 1024px;">
+        
+
+                    
+
+
+
+                    <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/cat_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair-with-the-cat-sitting-on-it-near-a-beach_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair-with-the-cat-sitting-on-it-near-a-beach_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair-with-the-cat-sitting-on-it-near-a-beach_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Watercolor-painting-of-cat-sitting-on-chair_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Watercolor-painting-of-cat-sitting-on-chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/Watercolor-painting-of-cat-sitting-on-chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V2* chair with the V1* cat sitting on it near a beach
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Watercolor painting of V1* cat sitting on V2* chair
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/moongate_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/moongate_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/dog_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog-wearing-sunglasses-in-front-of-moongate_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/dog-wearing-sunglasses-in-front-of-moongate_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/dog-wearing-sunglasses-in-front-of-moongate_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/A-digital-illustration-of-the-dog-in-front-of-moongate_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/A-digital-illustration-of-the-dog-in-front-of-moongate_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/A-digital-illustration-of-the-dog-in-front-of-moongate_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V2* dog wearing sunglasses in front of moongate
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           A digital illustration of the V2* dog in front of moongate
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/cat_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/cat_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/wooden_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/the-cat-is-sitting-inside-a-wooden-pot-and-looking-up_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/the-cat-is-sitting-inside-a-wooden-pot-and-looking-up_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/the-cat-is-sitting-inside-a-wooden-pot-and-looking-up_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/the-cat-sculpture-in-the-style-of-a-wooden-pot_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/the-cat-sculpture-in-the-style-of-a-wooden-pot_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/the-cat-sculpture-in-the-style-of-a-wooden-pot_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           The V1* cat is sitting inside a V2* wooden pot and looking up
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           The V1* cat sculpture in the style of a V2* wooden pot
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/table_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/table_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/photo-of-a-table-and-the-chair_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/photo-of-a-table-and-the-chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/photo-of-a-table-and-the-chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Watercolor-painting-of-a-table-and-a-chair_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/Watercolor-painting-of-a-table-and-a-chair_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/Watercolor-painting-of-a-table-and-a-chair_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Photo of a V1* table and the V2* chair
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           Watercolor painting of a V1* table and a V2* chair
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <div class="row">
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/wooden_0.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/wooden_1.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-6 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-in-the-wooden-pot-on-a-table_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-in-the-wooden-pot-on-a-table_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower-in-the-wooden-pot-on-a-table_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <div class="row">
+                          <div class="col-8 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-engraving-on-the-wooden-pot_0.jpg" style="width: 100%;"/>
+                          </div>
+                          <div class="col-4 px-0" style="margin: auto;">
+                           <img src="images/mainpage/flower-engraving-on-the-wooden-pot_2.jpg" style="width: 100%;"/>
+                           <img src="images/mainpage/flower-engraving-on-the-wooden-pot_3.jpg" style="width: 100%;"/>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="row">
+                        <div class="column px-4" style="margin: auto;width: 25%;">
+                         <p class="caption text-center">
+                          <i>
+                           Target Images
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V2* flower in the V1* wooden pot on a table
+                          </i>
+                         </p>
+                        </div>
+                        <div class="column px-4" style="margin: auto;width: 37%;">
+                         <p class="caption text-center">
+                          <i>
+                           V2* flower engraving on the V1* wooden pot
+                          </i>
+                         </p>
+                        </div>
+                       </div>
+                       <hr/>
+                       
+                       
+                       
+
+
+        
+
+        
+                </div>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Sample Qualitative Comparison with Concurrent Works </h2>
+                <p> 
+                </p>
+                <p></p><p></p>
+                <div id="comparison" class="containershadow" style="max-width: 1400px;">
+        
+                    <p>Below image shows qualitative comparison of our method with <a href="https://dreambooth.github.io" target="_blank">DreamBooth</a> and 
+                        <a href="https://textual-inversion.github.io" target="_blank">Textual Inversion</a> on single-concept fine-tuning. 
+                        DreamBooth fine-tunes all the parameters in the diffusion model, keeping the text transformer frozen, and uses generated images as the regularization dataset.
+                        Textual Inversion only optimizes a new word embedding token for each concept. Please see our <a href="results.html">Gallery</a> page for more sample generations on the complete evaluation set of text-prompts.
+                    </p> 
+
+                    <img src="images/mainpage/compare_single_concept.jpg" style="width: 100%;"/>
+                        
+                    <hr>
+
+                    <p>Sample generations on multi-concept by our (joint) training method, ours optimization based method, and <a href="https://dreambooth.github.io" target="_blank">DreamBooth</a>.
+                        For more samples on the complete evaluation set of text-prompts, please see our <a href="results.html">Gallery</a> page. 
+                    </p>
+
+                    <img src="images/mainpage/compare_multi_concept.jpg" style="width: 100%;"/>
+                
+
+
+                </div>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Model Compression </h2>
+                <p> 
+                </p>
+                <p></p><p></p>
+                <div id="compression" class="containershadow" style="max-width: 1400px;">
+        
+                    <p> We can further reduce the storage requirement for each fine-tuned model by saving the low-rank approximation of the difference between the pretrained model 
+                        and fine-tuned model updated weights. 
+                    </p> 
+                    <p>
+                        Sample generations with different level of compression. The storage requirements of models from left to right are 75MB, 15MB, 5MB, 1MB,  0.1MB, and 0.08MB (to save the optimized V*). 
+                        Even with 5x compression with top 60% singular values, the performance remains similar. 
+                    </p>
+
+                    <center> <img  src="images/mainpage/compression.jpg" style="width: 70%; margin-left: auto; margin-right: auto;" /> </center>
+                        
+                </div>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Limitations </h2>
+                <p> 
+                </p>
+                <p></p><p></p>
+                <div id="limitation" class="containershadow" style="max-width: 1400px;">
+        
+                    <p> Our method has still various limitations. Difficult compositions, e.g., a pet dog and a pet cat, remain challenging. 
+                        In many case, the pre-trained model also faces a similar difficulty, and we believe that our model inherits these limitations. 
+                        Additionally, composing increasing three or more concepts together is also challenging. 
+                    </p> 
+                    <p>
+                        First column shows the sample target images used for fine-tuning the model with our joint training method. Second column shows the failed compositional generation by our method. 
+                        Third column shows generations from the pretrained model with similar text prompt as input.
+                    </p>
+
+                    <center> <img  src="images/mainpage/limitation.jpg" style="width: 70%; margin-left: auto; margin-right: auto;" /> </center>
+                        
+                </div>
+                <p></p><p></p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @inproceedings{kumari2022customdiffusion,<br>
+                    &nbsp; author = {Kumari, Nupur and Zhang, Bingliang and Zhang, Richard and Shechtman, Eli and Zhu, Jun-Yan},<br>
+                    &nbsp; title  = {Multi-Concept Customization of Text-to-Image Diffusion},<br>
+                    &nbsp; booktitle = {CVPR},<br>
+                    &nbsp; year   = {2023},<br>
+                }</code>
+            </div>
+        </div>
+    </div>
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Related and Concurrent Works</h2>
+                <h5>
+                <ul>
+                    <li>Nataniel Ruiz, Yuanzhen Li, Varun Jampani, Yael Pritch, Michael Rubinstein, and Kfir Aberman. <a href="https://dreambooth.github.io"> Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation. </a> arXiv preprint arXiv:2208.12242 (2022). </li><br>
+                    
+                    <li>Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik, Amit H. Bermano, Gal Chechik, and Daniel Cohen-Or. <a href="https://textual-inversion.github.io">An image is worth one word: Personalizing text-to-image generation using textual inversion.</a> arXiv preprint arXiv:2208.01618 (2022).</li><br>
+                    
+                    <li>Nan Liu, Shuang Li, Yilun Du, Antonio Torralba, and Joshua B. Tenenbaum. <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">Compositional Visual Generation with Composable Diffusion Models.</a> ECCV 2022.</li><br>
+                    
+                    <li>Suraj Patil. <a href="https://huggingface.co/valhalla/sd-wikiart-v2">valhalla/sd-wikiart-v2.</a> Fine-tuning with only attention layer update.</li><br>
+                                        
+                </ul> 
+            </h5>               
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="max-width: 1400px;">
+    <div class="container" style="max-width: 1400px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Acknowledgements</h2>
+                <p> We are grateful to Nick Kolkin, David Bau, Sheng-Yu Wang, Gaurav Parmar, John Nack, and Sylvain Paris for their helpful comments and discussion, 
+                    and to Allie Chang, Chen Wu, Sumith Kulal, Minguk Kang, Yotam Nitzan, and Taesung Park for proofreading the draft. 
+                    We also thank Mia Tang and Aaron Hertzmann for sharing their artwork. Some of the datasets are downloaded from Unsplash.
+                    This work was partly done by Nupur Kumari during the Adobe internship. 
+                    The work is partly supported by Adobe Inc. 
+                    The website template is taken from <a href="https://dreamfusion3d.github.io/index.html">DreamFusion</a> project page.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="images/polyfill.js"></script>
+    <script src="images/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="images/scripts.js"></script>
+    <script src="images/jquery.min.js"></script>
+    <script src="images/bootstrap.bundle.min.js"></script>
+    <script src="images/webflow.fd002feec.js"></script>
+    
+    <!-- Import the component -->
+
+
+
+</body></html>
