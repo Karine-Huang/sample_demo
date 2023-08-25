@@ -311,16 +311,12 @@
 # Failure cases
 
 ## color
-<table>
     <tr>
         <td ><center><img src="./images/color_failure/a black squirrel and a brown nut_0.711.png" >a black squirrel and a brown nut, BLIP-VQA score:0.711 </center></td>
         <td ><center><img src="./images/color_failure/a brown boat and a blue cat_0.8719.png"  >a brown boat and a blue cat, BLIP-VQA score: 0.8719</center></td>
         <td><center><img src="./images/color_failure/a red bowl and a blue train_0.9287.png" >a red bowl and a blue train, BLIP-VQA score: 0.9287</center></td>
 
-    <tr>
-
     </tr>
-</table>
 
 ## shape
 ### prompt: xxxxx
