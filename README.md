@@ -103,20 +103,20 @@
 
 
 ## shape
-### prompt: a bathroom with green tile and a red shower curtain
+### prompt: a big mountain and a small tree
 <table>
     <tr>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.008.png" >BLIP-VQA score:0.008</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.032.png" >BLIP-VQA score:0.032</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.5603.png" >BLIP-VQA score:0.5603</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9348.png" >BLIP-VQA score:0.9348</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9367.png" >BLIP-VQA score:0.9367</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.2519.png" >BLIP-VQA score:0.2519</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.2572.png" >BLIP-VQA score:0.2572</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.271.png" >BLIP-VQA score:0.271</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.4222.png" >BLIP-VQA score:0.4222</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.4446.png" >BLIP-VQA score:0.4446</center></td>
     </tr>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9455.png" >BLIP-VQA score:0.9455</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9497.png" >BLIP-VQA score:0.9497</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9532.png" >BLIP-VQA score:0.9532</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9683.png" >BLIP-VQA score:0.9683</center></td>
-        <td><center><img src="./images/color/a bathroom with green tile and a red shower curtain_0.9747.png" >BLIP-VQA score:0.9747</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.5968.png" >BLIP-VQA score:0.5968</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.766.png" >BLIP-VQA score:0.766</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.8212.png" >BLIP-VQA score:0.8212</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.8715.png" >BLIP-VQA score:0.8715</center></td>
+        <td><center><img src="./images/shape/a big mountain and a small tree_0.8826.png" >BLIP-VQA score:0.8826</center></td>
     <tr>
 
     </tr>
@@ -124,80 +124,82 @@
 
 
 
-### prompt: a black squirrel and a brown nut
+### prompt: a pyramidal gift box and a cubic gift wrap
 <table>
     <tr>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.5498.png" >BLIP-VQA score:0.5498</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.5627.png" >BLIP-VQA score:0.5627</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.711.png" >BLIP-VQA score:0.711</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.8153.png" >BLIP-VQA score:0.8153</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.8736.png" >BLIP-VQA score:0.8736</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.2721.png" >BLIP-VQA score:0.2721</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.2758.png" >BLIP-VQA score:0.2758</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.2892.png" >BLIP-VQA score:0.2892</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.2983.png" >BLIP-VQA score:0.2983</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.313.png" >BLIP-VQA score:0.313</center></td>
     </tr>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.8883.png" >BLIP-VQA score:0.8883</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.9286.png" >BLIP-VQA score:0.9286</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.9352.png" >BLIP-VQA score:0.9352</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.9435.png" >BLIP-VQA score:0.9435</center></td>
-        <td><center><img src="./images/color/a black squirrel and a brown nut_0.9616.png" >BLIP-VQA score:0.9616</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.3142.png" >BLIP-VQA score:0.3142</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.3632.png" >BLIP-VQA score:0.3632</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.4246.png" >BLIP-VQA score:0.4246</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.4301.png" >BLIP-VQA score:0.4301</center></td>
+        <td><center><img src="./images/shape/a pyramidal gift box and a cubic gift wrap_0.5054.png" >BLIP-VQA score:0.5054</center></td>
 
     <tr>
 
     </tr>
 </table>
 
-### prompt: a blue backpack and a red book
+### prompt: a spherical soccer ball and a conical traffic cone
 <table>
     <tr>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.0013.png" >BLIP-VQA score:0.0013</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.0256.png" >BLIP-VQA score:0.0256</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.0362.png" >BLIP-VQA score:0.0362</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.4833.png" >BLIP-VQA score:0.4833</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.6179.png" >BLIP-VQA score:0.6179</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.3064.png" >BLIP-VQA score:0.3064</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.4733.png" >BLIP-VQA score:0.4733</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.5298.png" >BLIP-VQA score:0.5298</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.591.png" >BLIP-VQA score:0.591</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.6086.png" >BLIP-VQA score:0.6086</center></td>
     </tr>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.6437.png" >BLIP-VQA score:0.6437</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.6504.png" >BLIP-VQA score:0.6504</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.6532.png" >BLIP-VQA score:0.6532</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.9678.png" >BLIP-VQA score:0.9678</center></td>
-        <td><center><img src="./images/color/a blue backpack and a red book_0.9858.png" >BLIP-VQA score:0.9858</center></td>
+
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.7019.png" >BLIP-VQA score:0.7019</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.7414.png" >BLIP-VQA score:0.7414</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.7671.png" >BLIP-VQA score:0.7671</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.8489.png" >BLIP-VQA score:0.8489</center></td>
+        <td><center><img src="./images/shape/a spherical soccer ball and a conical traffic cone_0.864.png" >BLIP-VQA score:0.864</center></td>
 
     <tr>
 
     </tr>
 </table>
 
-### prompt: a bathroom with white tile and a beige toilet
+### prompt: a triangular slice of bread and a rectangular bread basket
 <table>
     <tr>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.002.png" >BLIP-VQA score:0.002</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0126.png" >BLIP-VQA score:0.0126</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0201.png" >BLIP-VQA score:0.0201</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0418.png" >BLIP-VQA score:0.0418</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0432.png" >BLIP-VQA score:0.0432</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.0277.png" >BLIP-VQA score:0.0277</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.0297.png" >BLIP-VQA score:0.0297</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.0568.png" >BLIP-VQA score:0.0568</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.0922.png" >BLIP-VQA score:0.0922</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.1116.png" >BLIP-VQA score:0.1116</center></td>
     </tr>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.0595.png" >BLIP-VQA score:0.0595</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.09.png" >BLIP-VQA score:0.09</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1001.png" >BLIP-VQA score:0.1001</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.1088.png" >BLIP-VQA score:0.1088</center></td>
-        <td><center><img src="./images/color/a bathroom with white tile and a beige toilet_0.2324.png" >BLIP-VQA score:0.2324</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.133.png" >BLIP-VQA score:0.133</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.1516.png" >BLIP-VQA score:0.1516</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.1906.png" >BLIP-VQA score:0.1906</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.7206.png" >BLIP-VQA score:0.7206</center></td>
+        <td><center><img src="./images/shape/a triangular slice of bread and a rectangular bread basket_0.7832.png" >BLIP-VQA score:0.7832</center></td>
 
     <tr>
 
     </tr>
 </table>
 
-### prompt: a brown boat and a blue cat
+### prompt: an oblong cucumber and a teardrop plum
+
 <table>
     <tr>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.0011.png" >BLIP-VQA score:0.0011</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.1314.png" >BLIP-VQA score:0.1314</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.4872.png" >BLIP-VQA score:0.4872</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.6168.png" >BLIP-VQA score:0.6168</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.6705.png" >BLIP-VQA score:0.6705</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.051.png" >BLIP-VQA score:0.051</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.0699.png" >BLIP-VQA score:0.0699</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.0802.png" >BLIP-VQA score:0.0802</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.0876.png" >BLIP-VQA score:0.0876</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.0977.png" >BLIP-VQA score:0.0977</center></td>
     </tr>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.8512.png" >BLIP-VQA score:0.8512</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.8719.png" >BLIP-VQA score:0.8719</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.9156.png" >BLIP-VQA score:0.9156</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.9613.png" >BLIP-VQA score:0.9613</center></td>
-        <td><center><img src="./images/color/a brown boat and a blue cat_0.9618.png" >BLIP-VQA score:0.9618</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.3262.png" >BLIP-VQA score:0.3262</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.4349.png" >BLIP-VQA score:0.4349</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.4445.png" >BLIP-VQA score:0.4445</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.476.png" >BLIP-VQA score:0.476</center></td>
+        <td><center><img src="./images/shape/an oblong cucumber and a teardrop plum_0.5414.png" >BLIP-VQA score:0.5414</center></td>
 
     <tr>
 
